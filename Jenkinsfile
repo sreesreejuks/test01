@@ -16,7 +16,7 @@ pipeline {
         stage('Building Nextjs') {
             steps {
                 script {
-                    if (env.gitlabTargetBranch=="master")
+                    if (env.GIT_BRANCH=="master")
                         {
                         sh 'echo this is production branch'
                     }
