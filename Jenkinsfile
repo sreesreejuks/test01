@@ -16,15 +16,15 @@ pipeline {
         stage('Building Nextjs') {
             steps {
                 script {
-                    if (env.GIT_BRANCH=="master")
+                    if (env.GITHUB_REF=="master")
                         {
                         sh 'echo this is production branch'
                     }
-                    else if (env.gitlabTargetBranch=="uat")
+                    else if (env.GITHUB_REF=="uat")
                         {
                         sh 'echo this is uat'
                     }
-                    else if (env.gitlabTargetBranch=="development")
+                    else if (env.GITHUB_REF=="development")
                         {
                         sh 'echo this is dev'
                     }    
